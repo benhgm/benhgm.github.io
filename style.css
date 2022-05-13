@@ -82,7 +82,7 @@ nav h1{
     width: 200px;
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 20%;
     transform: translate(0, -55%);
     border-radius: 10px;
 }

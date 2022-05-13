@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>About - Benjamin Ho</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/8644701977.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--- Header Section--->
+        <section class="header">
+            <nav>
+                <h1>Benjamin Ho</h1>
+                <div class="nav-links" id="navLinks">
+                    <i class="fas fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="">now</a></li>
+                        <li><a href="">blog</a></li>
+                    </ul>
+                </div>
+                <i class="fas fa-bars" onclick="showMenu()"></i>
+            </nav>
+        </section>
+        
+        <section class="about">
+            <div class="about-intro">
+                <!--About-->
+                <h1>About</h1>
+                    <p>
+                        My name is Benjamin and I created this website to document my work and share my thoughts on things I am interested in. This is my first time maintaining a blog and I hope to write more regularly in future.
+                        <br><br>
+                        You can connect with me via <a href="">LinkedIn</a> or just drop me an <a href="">email</a>.
+                        <br><br><br>
+                    </p>
+            </div>
+        </section>
+
+        <section class="job-intro">
+            <div class="what-i-doing-now">
+                <!--What I'm doing now-->
+                <h1>What I'm doing now</h1>
+                <p>
+                    I am working as a machine learning engineer for autonomous driving systems. My job involves studying state of the art deep learning models and development deep neural networks for autonomous driving appplications. Before, I was working in the aviation industry as an engineering services engineer.
+                        <br><br>
+                    I am also an assistant coach at the ActiveSG Canoe Academy, where I teach the sport of kayaking to young and teenage kids and help them enjoy paddling and being on water.
+                        <br><br><br>
+                </p>
+            </div>
+        </section>
+            
+        <section class="interests">
+            <!--Interests-->
+            <h1>My Interests</h1>
+        </section>
+        <section class="paddling">
+            <h2>Paddling</h2>
+                <div class="paddling-picture">
+                <img src="paddling.JPG" alt="benjamin-ho-paddling">
+                </div>
+                <p>
+                    I started learning to kayak in 2014 after joining the canoe sprint team in my university. Initially, the idea was to use it as a way to stay fit. However, after attending a couple of training sessions and dedicating some time to it, I fell in love with the sport and have never stopped paddling since.
+                    <br><br>
+                </p>
+        </section>
+            
+        <section class="spanish">
+            <h2>Learning Spanish</h2>
+            <p>
+                I have been learning spanish for 5 years now. This interest started when I was doing my overseas exchange in Madrid, at the Universidad Carlos III de Madrid. I wanted to be able to communicate with the locals and understand things when I was there. So, I started self-learning using Google Translate and some mobile apps. After returning from Spain, I attended classes in university and in a <a href="">language school</a> in Singapore.
+                    <br><br>
+                Here's a short introduction of myself in spanish:
+                    <br><br>
+                ¡Hola! Me llamo Benjamin, tengo 28 años. Empecé a aprender español cuando estaba viviendo en Madrid para mi intercambio universitario. Me gusta la comida española y algunos de mis intereses incluyen el piragüismo y ver el fútbol.
+            </p>
+            </div> 
+        </section>
+
+        <!---Javascript for Toggle Menu--->        
+        <script>
+            var navLinks = document.getElementById("navLinks");
+
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+
+            function hideMenu(){
+                navLinks.style.right = "-150px";
+            }
+        </script>
+    </body>
+</html>

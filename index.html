@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Homepage - Benjamin Ho</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/8644701977.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--- Header Section--->
+        <section class="header">
+            <nav>
+                <h1>Benjamin Ho</h1>
+                <div class="nav-links" id="navLinks">
+                    <i class="fas fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="">now</a></li>
+                        <li><a href="">blog</a></li>
+                    </ul>
+                </div>
+                <i class="fas fa-bars" onclick="showMenu()"></i>
+            </nav>
+        </section>
+        <section class="welcome">
+            <div class="profile-picture">
+                <img src="benjamin-ho-profile-pic.jpg" alt="benjamin-ho-profile-pic">
+            </div>
+
+            <div class="intro">
+                <h1>Hello, I'm Ben</h1>
+                <p>I'm a machine learning software engineer from Singapore. In this website, 
+                    I share about what I do and other things that interest me.
+                    <br><br>
+                    You can find out more about me <a href="about.html">here</a> and see what I'm up to <a href="">now</a>.
+                </p>
+            </div>
+        </section>
+            
+
+        <!---Contact Section--->
+        <section class="contact">
+            
+        </section>
+        <!---Javascript for Toggle Menu--->        
+        <script>
+            var navLinks = document.getElementById("navLinks");
+
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+
+            function hideMenu(){
+                navLinks.style.right = "-150px";
+            }
+        </script>
+    </body>
+</html>

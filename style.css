@@ -1,0 +1,211 @@
+/*Global style*/
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a{
+    color: #0d0d0d;
+    text-decoration: underline;
+}
+
+h1{
+    font-size: 32px;
+    color: #0d0d0d
+}
+
+h2{
+    font-size:24px;
+    color: #0d0d0d
+}
+
+p{
+    font-size: 20px;
+    margin: 10px 0 10px;
+    color: #0d0d0d
+}
+
+/*header styling*/
+.header{
+    min-height: 7vh;
+    width: 100%;
+    background-color: #fffefa;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1{
+    font-size: 30px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #993300;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+/*index page styling*/
+.profile-picture img{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(0, -55%);
+    border-radius: 10px;
+}
+
+.intro{
+    width: 40%;
+    color: #0d0d0d;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    text-align: justify;
+}
+
+.intro h1{
+    font-size: 62px;
+    color: #0d0d0d;
+    text-align: left;
+}
+
+.intro p{
+    margin: 10px 0 40px;
+    font-size: 24px;
+    color: #0d0d0d;
+}
+
+nav .fas{
+    display: none;
+}
+
+/*about page styling*/
+.about{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    text-align: justify;
+}
+
+.job-intro{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    text-align: justify;
+}
+
+.interests{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    text-align: justify;
+}
+
+.paddling{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    text-align:justify;
+}
+
+.paddling-picture img{
+    margin: 20px 0 10px;
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.paddling h2{
+    margin: 20px 0 10px;
+    position: absolute;
+    left: 20%;
+}
+.paddling p{
+    left: 20%;
+    top: 25%;
+    position: absolute;
+    text-align: justify;
+}
+
+.spanish{
+    left: 25%;
+    width: 50%;
+    position: relative;
+    text-align:justify;
+}
+
+.spanish h2{
+    margin: 20px 0 10px;
+    position: absolute;
+}
+
+.spanish p{
+    top: 50px;
+    position: absolute;
+    text-align: justify;
+}
+
+
+@media(max-width: 700px){
+    .intro h1{
+        font-size: 32px;
+    }
+    .intro p{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #fffefa;
+        height: 100vh;
+        width: 150px;
+        top: 0;
+        right: -150px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fas{
+        display: block;
+        color: #0d0d0d;
+        margin: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}

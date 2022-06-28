@@ -93,7 +93,7 @@ nav h1{
     max-height: 33vh;
     position: absolute;
     top: 50%;
-    left: 27%;
+    left: 20%;
     transform: translate(0, -55%);
     border-radius: 10px;
     display: inline;

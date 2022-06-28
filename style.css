@@ -26,6 +26,16 @@ p{
     color: #0d0d0d
 }
 
+ul{
+    font-size: 20px;
+    margin: 0 18px 0;
+    color: #0d0d0d
+}
+
+figcaption{
+    text-align: center;
+}
+
 /*header styling*/
 .header{
     min-height: 7vh;
@@ -78,13 +88,14 @@ nav h1{
 
 /*index page styling*/
 .profile-picture img{
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: auto;
+    max-height: 33vh;
     position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(0, -55%);
+    top: 33%;
+    left: 20%;
     border-radius: 10px;
+    display: inline;
 }
 
 .intro{
@@ -179,6 +190,22 @@ nav .fas{
     text-align: justify;
 }
 
+/*blog post styling*/
+.blog_post{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    text-align: justify;
+    margin: 0 0 30px
+}
+
+.blog_post img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%
+}
+
 
 @media(max-width: 700px){
     .intro h1{
@@ -207,5 +234,16 @@ nav .fas{
         margin: 10px;
         font-size: 24px;
         cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .profile-picture {
+        width: 100;
+        height: auto;
+        padding-bottom: 190px;
+        position: absolute;
+        top: 10%;
+        left: 25%;
     }
 }

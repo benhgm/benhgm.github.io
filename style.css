@@ -36,6 +36,26 @@ figcaption{
     text-align: center;
 }
 
+.text-container{
+    width: 50%;
+    min-width: 500px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.text-container p{
+    max-width: 100%;
+    position: relative;
+    text-align: justify;
+}
+
+.about-picture img{
+    margin: 20px 0 10px;
+    height: 150px;
+    width: auto;
+    border-radius: 10px;
+}
+
 /*header styling*/
 .header{
     min-height: 7vh;
@@ -133,13 +153,6 @@ nav .fas{
 }
 
 /*about page styling*/
-.about{
-    width: 50%;
-    position: relative;
-    left: 25%;
-    text-align: justify;
-}
-
 .job-intro{
     width: 50%;
     position: relative;
@@ -151,32 +164,6 @@ nav .fas{
     width: 50%;
     position: relative;
     left: 25%;
-    text-align: justify;
-}
-
-.paddling{
-    width: 50%;
-    position: relative;
-    left: 25%;
-    text-align:justify;
-}
-
-.paddling-picture img{
-    margin: 20px 0 10px;
-    height: 150px;
-    width: 150px;
-    border-radius: 10px;
-}
-
-.paddling h2{
-    margin: 20px 0 10px;
-    position: absolute;
-    left: 20%;
-}
-.paddling p{
-    left: 20%;
-    top: 25%;
-    position: absolute;
     text-align: justify;
 }
 

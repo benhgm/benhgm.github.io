@@ -92,14 +92,9 @@ nav h1{
     width: auto;
     max-height: 33vh;
     position: absolute;
-<<<<<<< HEAD
-    top: 33%;
-    left: 20%;
-=======
     top: 50%;
     left: 27%;
     transform: translate(0, -55%);
->>>>>>> 3630ecf00e81c5a984258663b5ec634f94b52d27
     border-radius: 10px;
     display: inline;
 }
@@ -242,17 +237,3 @@ nav .fas{
         cursor: pointer;
     }
 }
-<<<<<<< HEAD
-
-@media only screen and (max-width: 390px) {
-    .profile-picture {
-        width: 100;
-        height: auto;
-        padding-bottom: 190px;
-        position: absolute;
-        top: 10%;
-        left: 25%;
-    }
-}
-=======
->>>>>>> 3630ecf00e81c5a984258663b5ec634f94b52d27

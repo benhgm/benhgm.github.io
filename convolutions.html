@@ -32,6 +32,7 @@
             <div class="title">
                 <!--About-->
                 <h1>Learning About Convolutions Using PyTorch</h1>
+                    <br>
                     <p>
                         I've been playing around with CNNs for about a year now, taking open-source projects and trying to run the inference codes and doing some training. Despite this experience,
                         I never really understood what was happening in the convolutional layers.
@@ -45,8 +46,7 @@
         </section>
 
         <section class="blog_post">
-            <div class="setup">
-                <!--What I'm doing now-->
+            <div class="blog_section">
                 <h2>Experiment Setup</h2>
                 <p>
                     For this experiment, I will be playing around with the <a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">Conv2d</a> operation from PyTorch
@@ -58,36 +58,108 @@
                     </ul>
                         <br>
                 </p>
-                <img src="kitti_l_color.png">
+                <p>
+                    To ensure that I get consistent results, I initialize the kernel to a constant value of 0.1, with zero bias.
+                </p>
+                <img src="images/kitti_l_color.png">
                 <figcaption>Sample image taken from the KITTI driving dataset</figcaption>
             </div>
         </section>
-            
-        <section class="interests">
-            <!--Interests-->
-            <h1>My Interests</h1>
-        </section>
-        <section class="paddling">
-            <h2>Paddling</h2>
-                <div class="paddling-picture">
-                <img src="paddling.JPG" alt="benjamin-ho-paddling">
-                </div>
+        
+        <section class="blog_post">
+            <div class="blog_section">
+                <h2>Experiment 1: Varying Kernel Size</h2>
                 <p>
-                    I started learning to kayak in 2014 after joining the canoe sprint team in my university. Initially, the idea was to use it as a way to stay fit. However, after attending a couple of training sessions and dedicating some time to it, I fell in love with the sport and have never stopped paddling since.
+                    For the first experiment, I ran the test image through the Conv2d operation using kernel sizes of 1 to 10. The observation of the output obtained was 
+                    that as kernel size increased, the output image became more blurry. As can be seen in the GIF below, showing the output image change with an increase in kernel size.
+                    <br><br>
+                    <img src="gifs/conv_kernels.gif">
+                    <figcaption>Convolution output by varying kernel size from 1 to 10. Small kernel size produces a detailed output, while a large kernel produces a blurry image</figcaption>
                     <br><br>
                 </p>
+                <p>
+                    This makes sense if we look more closely at what the 2D convolution operation does. 
+                    <br><br>
+                    Essentially, convolution consists of six steps:
+                    <br><br>
+                    <h3><u>Step 1: Positioning of kernel</u></h3>
+                    <p>
+                        For an input image (or array, or matrix) of X-number of columns by Y-number of rows, the kernel starts at the top-left most corner of the input.
+                    </p>
+                        <br>
+                    <h3><u>Step 2: Element-wise Multiplication</u></h3>
+                    <p>
+                        In this position, for every element in the kernel, it is multiplied by the value of the element in the same position as it is in the input. 
+                        For a kernel of size 2 (2 rows and 2 columns), we would have top-left, top-right, bottom-left and bottom-right elements.
+                    </p>
+                        <br>
+                    <h3><u>Step 3: Summation of Products</u></h3>
+                    <p>
+                        The product of each element-wise multiplication operation is added together.
+                    </p>
+                        <br>
+                    <h3><u>Step 4: Striding</u></h3>
+                    <p>
+                        The kernel takes a stride (or a step) down the row, depending on the stride length. If the stride length is 2, then the kernel moves two pixels down.
+                    </p>
+                        <br>
+                    <h3><u>Step 5: Rinse & Repeat</u></h3>
+                    <p>
+                        The entire process is repeated until the kernel reaches the end of the row, then it moves down the start at the next column, and so on.
+                    </p>
+                        <br>
+                    <h3><u>Step 6: Arrange Output</u></h3>
+                    <p>
+                        After the kernel reaches the end of the input, all the summation outputs are arranged in the order they were produced, and based on which row in the original 
+                        input they were produced from, to form the final output
+                    </p>
+                        <br>
+                    <p>
+                        For a visual illustration, refer to the GIF below.
+                    </p>
+                    <img src="gifs/conv_gif.gif">
+                    <figcaption>
+                        Illustration of a convolution operation using a kernel with size 3 (3x3) over a 5x5 image. The small red values in the yellow boxes
+                        represent the kernel values. 
+                    </figcaption>
+                    <br>
+                </p>
+                <h3><u>Explanation</u></h3>
+                <p>
+                    What this means is that each time the kernel works goes over a set of pixels, it aggregates the total value of all the pixels in its area of influence.
+                    <br><br>
+                    The larger the kernel, the more the fine-grained details in an image are absorbed into the aggregate, whereas a small kernel will retain each pixel's 
+                    relative strength over neighbouring pixels, thus preserving the details of the image.
+                    <br><br> 
+                    As such, we can conclude that a small kernel size is useful for extracting detailed features, while a large kernel size is good for getting
+                    the general structure of an object.
+                    <br><br>
+                    On the application side, the visualised results above also show us how convolutions using a larger kernel size present a use case for blurring effects on images.
+                </p>
+            </div>
         </section>
-            
-        <section class="spanish">
-            <h2>Learning Spanish</h2>
-            <p>
-                I have been learning spanish for 5 years now. This interest started when I was doing my overseas exchange in Madrid, at the Universidad Carlos III de Madrid. I wanted to be able to communicate with the locals and understand things when I was there. So, I started self-learning using Google Translate and some mobile apps. After returning from Spain, I attended classes in university and in a <a href="">language school</a> in Singapore.
+
+        <section class="blog_post">
+            <div class="blog_section">
+                <h2>Experiment 2: Varying Stride Length</h2>
+                <p>
+                    For the second experiment, I kept the kernel size constant at 1. This time, I wanted to test the effect of changing the stride length on the convolution result. 
+                    For a stride length of 1 to 10, the convolution result is as shown in the GIF below. 
                     <br><br>
-                Here's a short introduction of myself in spanish:
+                    From the GIF, we can see how increasing the stride length causes a severe drop in image resolution. It is also interesting to note that the image details become patchy 
+                    rather than smooth unlike when the kernel changes.
                     <br><br>
-                ¡Hola! Me llamo Benjamin, tengo 28 años. Empecé a aprender español cuando estaba viviendo en Madrid para mi intercambio universitario. Me gusta la comida española y algunos de mis intereses incluyen el piragüismo y ver el fútbol.
-            </p>
-            </div> 
+                    <img src="gifs/conv_stride.gif">
+                    <figcaption>Convolution output by varying stride length from 1 to 10. Blurring effect is more prominent when changine stride length compared to changing kernel size</figcaption>
+                    <br><br>
+                </p>
+                <h2>Explanation</h2>
+                <p>
+                    Similar to increasing the kernel size, increasing stride length causes a loss in information from the input image. This is because the kernel skips the number of pixels equal to 
+                    the stride length (Step 4 of the convolution operation summary above). For a kernel size of only 1, as used in my experiments, this causes information in the skipped pixels to be lost 
+                    in the final output.
+                </p>
+            </div>
         </section>
 
         <!---Javascript for Toggle Menu--->        

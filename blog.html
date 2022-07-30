@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Homepage - Benjamin Ho</title>
+        <title>Blog posts - Benjamin Ho</title>
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,8 +11,8 @@
         <script src="https://kit.fontawesome.com/8644701977.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <!--- Header Section--->
-        <section class="header">
+         <!--- Header Section--->
+         <section class="header">
             <nav>
                 <h1>Benjamin Ho</h1>
                 <div class="nav-links" id="navLinks">
@@ -27,37 +27,21 @@
                 <i class="fas fa-bars" onclick="showMenu()"></i>
             </nav>
         </section>
-        <section class="welcome">
-            <div class="profile-picture">
-                <img src="images/benjamin-ho-profile-pic.jpg" alt="benjamin-ho-profile-pic">
-            </div>
-
-            <div class="intro">
-                <h1>Hello, I'm Ben</h1>
-                <p>I'm a machine learning software engineer from Singapore. In this website, 
-                    I share about what I do and other things that interest me.
-                    <br><br>
-                    You can find out more about me <a href="about.html">here</a> and see what I'm up to <a href="">now</a>.
-                </p>
+        <section class="blog_content">
+            <h1>Blog Posts</h1>
+            <br><br>
+            <h2>July 2022</h2>
+            <br>
+            <div class="nav-links" id="navLinks">
+                <style>
+                    .blog_content ul li {
+                        left: -30%;
+                    }
+                </style>
+                <ul>
+                    <li><a href="convolutions.html">Learning About Convolutions Using PyTorch</a></li>
+                </ul>
             </div>
         </section>
-            
-
-        <!---Contact Section--->
-        <section class="contact">
-            
-        </section>
-        <!---Javascript for Toggle Menu--->        
-        <script>
-            var navLinks = document.getElementById("navLinks");
-
-            function showMenu(){
-                navLinks.style.right = "0";
-            }
-
-            function hideMenu(){
-                navLinks.style.right = "-150px";
-            }
-        </script>
     </body>
 </html>

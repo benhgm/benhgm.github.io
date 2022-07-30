@@ -185,6 +185,13 @@ nav .fas{
     text-align: justify;
 }
 
+/*blog content page styling*/
+.blog_content{
+    width: 50%;
+    position: relative;
+    left: 25%
+}
+
 /*blog post styling*/
 .blog_post{
     width: 50%;
